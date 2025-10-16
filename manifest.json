@@ -1,0 +1,48 @@
+{
+    "name": "PWA",
+    "description": "hogehoge",
+    "icons": [
+        {
+            "src": "img/icon-96.png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "img/icon-128.png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "img/icon-256.png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "img/icon-512.png",
+            "sizes": "512x512"
+        }
+    ],
+    "widgets": [
+        {
+            "name": "name",
+            "description": "hogehoge",
+            "tag": "pwamp",
+            "template": "pwamp-template",
+            "ms_ac_template": "widgets/[任意のファイル名-レイアウト].json",
+            "data": "widgets/[任意のファイル名-データ].json",
+            "type": "application/json",
+            "screenshots": [
+                {
+                    "src": "./screenshot-widget.png",
+                    "sizes": "600x400",
+                    "label": "hogehoge"
+                }
+            ],
+            "icons": [
+                {
+                    "src": "./favicon-16.png",
+                    "sizes": "16x16"
+                }
+            ],
+            "auth": false,
+            "update": 86400
+        }
+    ]
+}
