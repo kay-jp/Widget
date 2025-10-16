@@ -14,6 +14,7 @@
             "tags": "pwatest",
             "ms_ac_template": "widgets/temp.json",
             "data": "widgets/data.json",
+            "start_url": "./index.html",
             "screenshots": [
                 {
                     "src": "./screenshot-widget.png",
