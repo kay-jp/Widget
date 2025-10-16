@@ -20,6 +20,20 @@
 <body>
     <h1>Faaadsa</h1>
     <script>
+        let deferredPrompt
+window.addEventListener('beforeinstallprompt', function(event){
+    event.preventDefault();
+    deferredPrompt = event;
+});
+
+function pwaInstall() {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt = null;
+    }else{
+        window.alert('既にインストールされているか、お使いのブラウザが対応していません。ブラウザが対応していない場合は「ホーム画面に追加」からインストールしてください。');
+    }
+}
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js')
                 .then(() => console.log('Service Worker registered'))

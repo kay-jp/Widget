@@ -4,20 +4,6 @@ self.addEventListener("widgetinstall", event => {
   // Pass the event.widget object to the function.
   event.waitUntil(renderWidget(event.widget));
 });
-let deferredPrompt
-window.addEventListener('beforeinstallprompt', function(event){
-    event.preventDefault();
-    deferredPrompt = event;
-});
-
-function pwaInstall() {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt = null;
-    }else{
-        window.alert('既にインストールされているか、お使いのブラウザが対応していません。ブラウザが対応していない場合は「ホーム画面に追加」からインストールしてください。');
-    }
-}
 
 async function renderWidget(widget) {
   // Get the template and data URLs from the widget definition.
