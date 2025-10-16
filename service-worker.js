@@ -15,3 +15,36 @@ self.addEventListener('install', function (event) {
       })
   );
 });
+
+// activateイベント
+self.addEventListener('activate', function (event) {
+  console.log('Service Worker activating.');
+  // 古いキャッシュの削除
+  event.waitUntil(  // アクティベート処理完了までService Workerのインストールを待機
+    caches.keys()   // ブラウザに保存されているすべてのキャッシュ名のリストを取得
+      .then(function (cacheNames) {
+        return Promise.all(
+          cacheNames.map(function (thisCacheName) {
+            // 現在のキャッシュ名と異なる場合
+            if (thisCacheName !== cacheName) {
+              console.log('Service Worker removing old cache.', thisCacheName);
+              return caches.delete(thisCacheName);  // 現在のキャッシュを削除
+            }
+          })
+        );
+      })
+  );
+});
+
+// fetchイベント
+self.addEventListener('fetch', function (event) {
+  console.log('Service Worker fetching.', event.request.url);
+  // リクエスト処理（オフライン・オンライン両方）
+  event.respondWith(  // 指定したレスポンスをブラウザに返すように指示
+    caches.match(event.request)  // リクエストされたリソースがキャッシュに存在するか調べる
+      .then(function (response) {
+        // キャッシュがあればそれを返し、なければネットワークから取得
+        return response || fetch(event.request);
+      })
+  );
+});
