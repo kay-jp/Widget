@@ -15,3 +15,23 @@ async function renderWidget(widget) {
   // Render the widget with the template and data.
   await self.widgets.updateByTag(widget.definition.tag, {template, data});
 }
+// Update the widgets to their initial states
+// when the service worker is activated.
+self.addEventListener("activate", event => {
+  event.waitUntil(updateWidgets());
+});
+
+async function updateWidgets() {
+  // Get the widget that match the tag defined in the web app manifest.
+  const widget = await self.widgets.getByTag("pwatest");
+  if (!widget) {
+    return;
+  }
+
+  // Using the widget definition, get the template and data.
+  const template = await (await fetch(widget.definition.msAcTemplate)).text();
+  const data = await (await fetch(widget.definition.data)).text();
+
+  // Render the widget with the template and data.
+  await self.widgets.updateByTag(widget.definition.tag, {template, data});
+}
