@@ -1,6 +1,6 @@
 
 
-var CACHE_NAME = 'task-management';
+var CACHE_NAME = 'pwatest';
 var urlsToCache = [
 ];
 
