@@ -25,8 +25,8 @@
             "description": "hogehoge",
             "tag": "pwamp",
             "template": "pwamp-template",
-            "ms_ac_template": "widgets/[任意のファイル名-レイアウト].json",
-            "data": "widgets/[任意のファイル名-データ].json",
+            "ms_ac_template": "widgets/layout.json",
+            "data": "widgets/data.json",
             "type": "application/json",
             "screenshots": [
                 {
