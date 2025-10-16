@@ -10,7 +10,7 @@ async function onWidgetInstall(widget) {
   // Register a periodic sync, if this wasn't done already.
   // We use the same tag for the sync registration and the widget to
   // avoid registering several periodic syncs for the same widget.
-  const tags = await self.registration.periodicSync.getTags();
+  const tags = await self.registration.periodicSync.getTags("pwatest");
   if (!tags.includes(widget.definition.tag)) {
     await self.registration.periodicSync.register(widget.definition.tag, {
       minInterval: widget.definition.update
