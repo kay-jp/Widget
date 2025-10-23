@@ -12,7 +12,6 @@
       "name": "PWAmp mini player",
       "description": "widget to control the PWAmp music player",
       "tag": "pwamp",
-      "template": "pwamp-template",
       "ms_ac_template": "widgets/temp.json",
       "data": "widgets/data.json",
       "type": "application/json",
