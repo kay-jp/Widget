@@ -1,35 +1,36 @@
 {
-    "name": "PWAtest",
-    "description": "",
-    "icons": [
+  "name": "PWAmp",
+  "description": "A music player app",
+  "icons": [
+    { "src": "img/icon-96.png", "sizes": "96x96" },
+    { "src": "img/icon-128.png", "sizes": "128x128" },
+    { "src": "img/icon-256.png", "sizes": "256x256" },
+    { "src": "img/icon-512.png", "sizes": "512x512" }
+  ],
+  "widgets": [
+    {
+      "name": "PWAmp mini player",
+      "description": "widget to control the PWAmp music player",
+      "tag": "pwamp",
+      "template": "pwamp-template",
+      "ms_ac_template": "widgets/temp.json",
+      "data": "widgets/data.json",
+      "type": "application/json",
+      "screenshots": [
         {
-            "src": "./icon-16.png",
-            "sizes": "16x16"
+          "src": "./screenshot-widget.png",
+          "sizes": "600x400",
+          "label": "The PWAmp mini-player widget"
         }
-    ],
-    "widgets": [
+      ],
+      "icons": [
         {
-            "name": "PWATEST",
-            "description": "",
-            "tags": "pwatest",
-            "ms_ac_template": "widgets/temp.json",
-            "data": "widgets/data.json",
-            "start_url": "./index.html",
-            "screenshots": [
-                {
-                    "src": "./screenshot-widget.png",
-                    "sizes": "600x400",
-                    "label": "MiniPlayerWidget"
-                }
-            ],
-            "icons": [
-                {
-                    "src": "./favicon-16.png",
-                    "sizes": "16x16"
-                }
-            ],
-            "auth": false,
-            "update": 86400
+          "src": "./favicon-16.png",
+          "sizes": "16x16"
         }
-    ]
+      ],
+      "auth": false,
+      "update": 86400
+    }
+  ]
 }
