@@ -1,5 +1,5 @@
 {
-  "name": "PWAmp",
+  "name": "PWAtest",
   "description": "A music player app",
   "icons": [
     { "src": "img/icon-96.png", "sizes": "96x96" },
@@ -9,9 +9,9 @@
   ],
   "widgets": [
     {
-      "name": "PWAmp mini player",
+      "name": "Test Widget",
       "description": "widget to control the PWAmp music player",
-      "tag": "pwamp",
+      "tag": "pwaTest",
       "ms_ac_template": "widgets/temp.json",
       "data": "widgets/data.json",
       "type": "application/json",
