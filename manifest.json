@@ -12,6 +12,7 @@
       "name": "Test Widget",
       "description": "widget to control the PWAmp music player",
       "tag": "pwaTest",
+      "template": "pwamp-template",
       "ms_ac_template": "widgets/temp.json",
       "data": "widgets/data.json",
       "type": "application/json",
